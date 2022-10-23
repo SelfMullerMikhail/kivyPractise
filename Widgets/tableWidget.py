@@ -10,7 +10,7 @@ from kivy.graphics import *
 from DBUtils.DBHelper import DBHelper
 
 class orderWidget(BoxLayout):
-  __dbHelper=DBHelper();
+  __dbHelper=DBHelper()
   def __init__(self,order,rowid,quantity, **kwargs):
     super(orderWidget,self).__init__(**kwargs)
     self.orientation='horizontal'
@@ -48,7 +48,7 @@ class orderWidget(BoxLayout):
     return self.quantity*self.order[2]
 
 class tableWidget(GridLayout):
-  __dbHelper=DBHelper();
+  __dbHelper=DBHelper()
   def __init__(self,drinks, **kwargs):
     super(tableWidget,self).__init__(**kwargs)
     self.all_drinks=drinks
@@ -72,7 +72,7 @@ class tableWidget(GridLayout):
       return;
     self.selected_table=table
     self.table_label.text=table.dataObj[1]
-    self.order_box.clear_widgets();
+    self.order_box.clear_widgets()
     self.datas=self.__dbHelper.get_all_orders(self.selected_table.guid)
     for data in self.datas:
       order=next((x for x in self.all_drinks if x[0]==data[2]),None)
@@ -112,11 +112,11 @@ class tableWidget(GridLayout):
       return
     self.selected_table.renew_guid()
     self.order_box.clear_widgets()
-    self.get_total();
+    self.get_total()
 
   def new_table(self):
     if self.selected_table is None:
       return
     self.selected_table.renew_guid()
     self.order_box.clear_widgets()
-    self.get_total();
+    self.get_total()

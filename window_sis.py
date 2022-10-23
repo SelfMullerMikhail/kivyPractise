@@ -5,7 +5,7 @@ from kivy.core.window import Window
 from DBUtils.DBHelper import DBHelper
 from Widgets.listWidget import listWidget
 from Widgets.tableWidget import tableWidget
-app=None;
+app=None
 dbHelper = DBHelper()
 Window.maximize()
 class AppWithKivy(App):
@@ -38,4 +38,4 @@ class AppWithKivy(App):
         return self.root
     
 if __name__=='__main__':
-    AppWithKivy().run();
+    AppWithKivy().run()

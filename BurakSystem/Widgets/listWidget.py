@@ -9,7 +9,7 @@ class displayWidget(Button):
         super().__init__(**kwargs)
         self.dataObj = obj
         self.text = obj[1]
-        self.set_selected(False);
+        self.set_selected(False)
         self.guid=uuid.uuid4().hex
 
     def set_selected(self,isActive):
@@ -42,7 +42,7 @@ class listWidget(Splitter):
         if self.selected is not None:
             self.selected.set_selected(False)
         self.selected=x
-        self.selected.set_selected(True);
+        self.selected.set_selected(True)
         self.dispatch('on_addorder',x)
 
     def build(self):
